@@ -206,7 +206,7 @@ ${SITE_URL}/sitemap.xml
 });
 
 // ─── Static Files (production) ────────────────────────────────────────────────
-if (process.env.NODE_ENV === 'production' && fs.existsSync(DIST)) {
+if (fs.existsSync(DIST)) {
   app.use(express.static(DIST));
   app.get('*', (req, res) => {
     res.sendFile(path.join(DIST, 'index.html'));
