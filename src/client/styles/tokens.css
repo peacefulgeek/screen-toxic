@@ -1,0 +1,138 @@
+:root {
+  /* ─── Site Colors (The Screen Age) ─── */
+  --bg-primary: #F5F8FA;
+  --bg-secondary: #FFFFFF;
+  --bg-sidebar: #E8F0F8;
+  --text-primary: #18232E;
+  --text-secondary: #4A5568;
+  --text-muted: #718096;
+  --accent: #3A6E9C;
+  --accent-hover: #2C5A82;
+  --accent-soft: #D6E8F5;
+  --accent-light: #EBF4FC;
+  --border: #D1DCE8;
+  --border-light: #E8F0F8;
+  --card-shadow: 0 2px 8px rgba(58, 110, 156, 0.10);
+  --card-shadow-hover: 0 8px 24px rgba(58, 110, 156, 0.18);
+
+  /* ─── Typography ─── */
+  --font-family: 'Inter', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --body-font-size-desktop: 17px;
+  --body-font-size-mobile: 16px;
+  --line-height-body: 1.75;
+  --max-content-width: 740px;
+
+  /* ─── Spacing ─── */
+  --sidebar-width: 240px;
+  --header-height: 60px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 64px;
+
+  /* ─── Borders ─── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ─── Tap targets ─── */
+  --tap-target-min: 44px;
+
+  /* ─── Transitions ─── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ─── Z-index ─── */
+  --z-sidebar: 100;
+  --z-header: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+  /* ─── Progress bar ─── */
+  --progress-height: 3px;
+  --progress-color: var(--accent);
+}
+
+/* ─── Base Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--body-font-size-desktop);
+  line-height: var(--line-height-body);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Typography Scale ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h2 { font-size: clamp(1.35rem, 3vw, 1.875rem); }
+h3 { font-size: clamp(1.15rem, 2.5vw, 1.375rem); }
+h4 { font-size: 1.125rem; }
+
+p { margin-bottom: 1.25rem; }
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── Utility classes ─── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  body {
+    font-size: var(--body-font-size-mobile);
+  }
+}
