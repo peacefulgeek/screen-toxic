@@ -1,7 +1,7 @@
 // HARDCODE per site. DO NOT move these to env vars.
-const BUNNY_STORAGE_ZONE = 'the-screen-age';
+const BUNNY_STORAGE_ZONE = 'screen-toxic';
 const BUNNY_API_KEY      = 'BUNNY_API_KEY_PLACEHOLDER';  // Set when Bunny zone is created
-const BUNNY_PULL_ZONE    = 'https://the-screen-age.b-cdn.net';
+const BUNNY_PULL_ZONE    = 'https://screen-toxic.b-cdn.net';
 const BUNNY_HOSTNAME     = 'ny.storage.bunnycdn.com';
 
 // Fallback placeholder images for development (Unsplash, no text on images)

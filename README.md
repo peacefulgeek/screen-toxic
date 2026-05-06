@@ -85,8 +85,8 @@ sudo npm install -g pm2 pnpm
 ### 3. Clone & Configure
 
 ```bash
-git clone https://github.com/YOUR_ORG/the-screen-age.git
-cd the-screen-age
+git clone https://github.com/YOUR_ORG/screen-toxic.git
+cd screen-toxic
 pnpm install
 cp .env.example .env
 nano .env  # Fill in your values
@@ -96,7 +96,7 @@ pnpm build
 ### 4. Start with PM2
 
 ```bash
-pm2 start server/index.mjs --name the-screen-age
+pm2 start server/index.mjs --name screen-toxic
 pm2 startup
 pm2 save
 ```
@@ -133,13 +133,13 @@ sudo certbot --nginx -d thescreenage.com -d www.thescreenage.com
 
 ## Adding Bunny CDN
 
-1. Create a Bunny storage zone named `the-screen-age`
+1. Create a Bunny storage zone named `screen-toxic`
 2. Create a pull zone pointing to the storage zone
 3. Add to `.env`:
    ```
    BUNNY_API_KEY=your-api-key
-   BUNNY_STORAGE_ZONE=the-screen-age
-   BUNNY_PULL_ZONE=https://the-screen-age.b-cdn.net
+   BUNNY_STORAGE_ZONE=screen-toxic
+   BUNNY_PULL_ZONE=https://screen-toxic.b-cdn.net
    ```
 4. Run `node scripts/assign-images.mjs` to migrate images to CDN
 
@@ -148,7 +148,7 @@ sudo certbot --nginx -d thescreenage.com -d www.thescreenage.com
 ## Project Structure
 
 ```
-the-screen-age/
+screen-toxic/
 ├── server/
 │   └── index.mjs           # Express server (API + static serving)
 ├── src/
@@ -170,7 +170,7 @@ the-screen-age/
 │   ├── cron-publish.mjs     # Auto-publish cron
 │   └── cron-generate.mjs    # Auto-generate cron
 ├── data/
-│   └── the-screen-age.db    # SQLite database (gitignored)
+│   └── screen-toxic.db    # SQLite database (gitignored)
 ├── dist/                    # Built frontend (gitignored)
 ├── .env.example
 ├── .gitignore
