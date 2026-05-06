@@ -2,17 +2,24 @@
 /**
  * cron-publish.mjs
  * Toxic Screens — Auto-publish scheduler
- * 
- * Runs daily and publishes any articles whose published_at date has arrived
- * (status = 'scheduled', published_at <= today).
- * 
- * Date-gating: 6 articles/day are unlocked as their published_at date passes.
- * 
- * Setup (PM2):
- *   pm2 start scripts/cron-publish.mjs --name cron-publish --cron "0 6 * * *" --no-autorestart
- * 
- * Setup (system cron):
- *   0 6 * * * cd /var/www/screen-toxic && node scripts/cron-publish.mjs >> /var/log/screen-toxic-cron.log 2>&1
+ *
+ * Publishing schedule:
+ *   Phase 1 (days 1–40 from launch): 5 articles/day
+ *     Publish times: 8am, 10am, 12pm, 2pm, 4pm
+ *   Phase 2 (day 41+ from launch):   1 article/weekday (Mon–Fri)
+ *     Publish time: 9am
+ *
+ * This script publishes any article whose published_at <= NOW() and status = 'scheduled'.
+ * Run it hourly via cron — it is idempotent and safe to run multiple times.
+ *
+ * Setup (system cron — run every hour):
+ *   0 * * * * cd /var/www/screen-toxic && node scripts/cron-publish.mjs >> /var/log/screen-toxic-publish.log 2>&1
+ *
+ * Setup (PM2 — run every hour):
+ *   pm2 start scripts/cron-publish.mjs --name cron-publish --cron "0 * * * *" --no-autorestart
+ *
+ * To re-gate all articles (e.g. after changing the schedule):
+ *   node scripts/regate-articles.mjs
  */
 
 import { fileURLToPath } from 'url';
@@ -40,61 +47,88 @@ const DB_PATH = process.env.DB_PATH || path.join(projectRoot, 'data/screenage.db
 const db = new Database(DB_PATH);
 db.pragma('journal_mode = WAL');
 
-const today = new Date().toISOString().split('T')[0];
-
 function log(msg) {
   console.log(`[${new Date().toISOString()}] [cron-publish] ${msg}`);
 }
 
 async function main() {
-  log(`Running daily publish check for ${today}`);
+  const now = new Date().toISOString();
+  log(`Running publish check at ${now}`);
 
-  // Find all scheduled articles whose publish date has arrived
+  // Find all scheduled articles whose published_at has arrived
   const due = db.prepare(`
-    SELECT slug, title, published_at FROM articles
-    WHERE status = 'scheduled' AND published_at <= ?
+    SELECT id, slug, title, published_at FROM articles
+    WHERE status = 'scheduled'
+      AND published_at IS NOT NULL
+      AND published_at <= ?
     ORDER BY published_at ASC
-  `).all(today);
+  `).all(now);
 
-  log(`Found ${due.length} articles due for publishing`);
+  log(`Found ${due.length} article(s) due for publishing`);
 
   if (due.length === 0) {
-    log('Nothing to publish today.');
+    log('Nothing to publish right now.');
+
+    // Show next upcoming article
+    const next = db.prepare(`
+      SELECT title, published_at FROM articles
+      WHERE status = 'scheduled' AND published_at IS NOT NULL
+      ORDER BY published_at ASC LIMIT 1
+    `).get();
+    if (next) {
+      log(`Next scheduled: "${next.title?.slice(0, 55)}" at ${next.published_at?.slice(0, 16)}`);
+    }
+    db.close();
     return;
   }
 
   const publishStmt = db.prepare(`
-    UPDATE articles 
+    UPDATE articles
     SET status = 'published', last_modified_at = ?
-    WHERE slug = ?
+    WHERE id = ?
   `);
 
-  let published = 0;
-  for (const article of due) {
-    try {
-      publishStmt.run(today, article.slug);
-      published++;
-      log(`  ✓ Published: "${article.title.slice(0, 60)}" (scheduled for ${article.published_at})`);
-    } catch (e) {
-      log(`  ✗ Failed to publish ${article.slug}: ${e.message}`);
+  const publishAll = db.transaction((articles) => {
+    const ts = new Date().toISOString();
+    for (const article of articles) {
+      publishStmt.run(ts, article.id);
     }
+  });
+
+  publishAll(due);
+
+  for (const a of due) {
+    log(`  ✓ Published: "${a.title?.slice(0, 60)}" (was scheduled for ${a.published_at?.slice(0, 16)})`);
   }
 
-  // Log to cron_log table
+  // Log to cron_log if table exists
   try {
     db.prepare(`
       INSERT INTO cron_log (job_name, status, message, articles_generated)
       VALUES ('cron-publish', 'success', ?, ?)
-    `).run(`Published ${published} articles on ${today}`, published);
-  } catch(e) { /* cron_log table may not exist */ }
+    `).run(`Published ${due.length} articles`, due.length);
+  } catch (_) { /* cron_log table may not exist — that's fine */ }
 
-  log(`Done. Published ${published}/${due.length} articles.`);
-
-  // Stats
+  // Summary stats
   const stats = db.prepare(`
     SELECT status, COUNT(*) as n FROM articles GROUP BY status
   `).all();
-  log(`DB stats: ${stats.map(s => `${s.status}:${s.n}`).join(', ')}`);
+  log(`DB stats: ${stats.map(s => `${s.status}:${s.n}`).join(' | ')}`);
+
+  // Next upcoming
+  const next = db.prepare(`
+    SELECT title, published_at FROM articles
+    WHERE status = 'scheduled' AND published_at IS NOT NULL
+    ORDER BY published_at ASC LIMIT 1
+  `).get();
+  if (next) {
+    log(`Next scheduled: "${next.title?.slice(0, 55)}" at ${next.published_at?.slice(0, 16)}`);
+  } else {
+    log('No more scheduled articles — full backlog published!');
+  }
+
+  log(`Done. Published ${due.length} article(s) this run.`);
+  db.close();
 }
 
 main().catch(e => {
