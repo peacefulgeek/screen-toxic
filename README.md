@@ -15,7 +15,7 @@ Built by The Oracle Lover — Intuitive Educator & Oracle Guide.
 | Server | Express.js (ESM, Node 18+) |
 | Database | SQLite via `better-sqlite3` |
 | Fonts | Inter (Google Fonts) |
-| Images | Unsplash (CDN-ready, Bunny CDN when configured) |
+| Images | Bunny CDN (`screen-toxic.b-cdn.net`) — all images as compressed WebP |
 | AI Writing | OpenAI-compatible API (`gpt-4.1-mini`) |
 | Deployment | DigitalOcean Droplet (Node + PM2) |
 
@@ -23,7 +23,7 @@ Built by The Oracle Lover — Intuitive Educator & Oracle Guide.
 
 ## Features
 
-- **30 seed articles** across 8 categories, AI-generated with quality gate
+- **500 articles** across 8 categories, AI-generated with quality gate (30 live, 470 date-gated at 6/day)
 - **3 interactive assessments** (Screen Time Health Check, Social Media Readiness, Family Tech Balance)
 - **Dashboard Archetype E** — fixed sidebar, article card grid, reading progress bar
 - **Auto-publishing cron** — drip-publishes articles at configurable rate
@@ -61,8 +61,9 @@ Visit: http://localhost:3000
 |---|---|
 | `pnpm build` | Build the React frontend to `dist/` |
 | `node server/index.mjs` | Start the production server |
-| `node scripts/fast-seed.mjs` | Generate all 30 seed articles (requires OPENAI_API_KEY) |
-| `node scripts/assign-images.mjs` | Assign Unsplash hero images to articles |
+| `node scripts/fast-seed.mjs` | Generate initial 30 seed articles (requires OPENAI_API_KEY) |
+| `node scripts/generate-500.mjs` | Generate all 500 articles with Bunny CDN images + date-gating |
+| `node scripts/assign-images.mjs` | Re-assign hero images to articles |
 | `node scripts/cron-publish.mjs` | Manually trigger the publish cron |
 | `node scripts/cron-generate.mjs` | Manually trigger the generation cron |
 
@@ -85,7 +86,7 @@ sudo npm install -g pm2 pnpm
 ### 3. Clone & Configure
 
 ```bash
-git clone https://github.com/YOUR_ORG/screen-toxic.git
+git clone https://github.com/peacefulgeek/screen-toxic.git
 cd screen-toxic
 pnpm install
 cp .env.example .env
@@ -131,17 +132,24 @@ sudo certbot --nginx -d screentoxic.com -d www.screentoxic.com
 
 ---
 
-## Adding Bunny CDN
+## Bunny CDN
 
-1. Create a Bunny storage zone named `screen-toxic`
-2. Create a pull zone pointing to the storage zone
-3. Add to `.env`:
-   ```
-   BUNNY_API_KEY=your-api-key
-   BUNNY_STORAGE_ZONE=screen-toxic
-   BUNNY_PULL_ZONE=https://screen-toxic.b-cdn.net
-   ```
-4. Run `node scripts/assign-images.mjs` to migrate images to CDN
+Already configured. All images are stored on `screen-toxic.b-cdn.net` as compressed WebP (1200×630, quality 82).
+
+Add to `.env`:
+```
+BUNNY_API_KEY=6c37756b-8e97-4dc2-bda68cbb5dc4-6388-4450
+BUNNY_STORAGE_ZONE=screen-toxic
+BUNNY_CDN_URL=https://screen-toxic.b-cdn.net
+```
+
+To re-upload images: `python3 scripts/migrate-images-to-bunny.py`
+
+## Amazon Affiliate
+
+All product links use tag `spankyspinola-20`. Products are embedded inline in article bodies by the AI writing engine.
+
+To add more products, edit `AMAZON_CATALOG` in `src/data/articles-500.mjs`.
 
 ---
 
