@@ -1,4 +1,4 @@
-// 30 seed articles for The Screen Age
+// 30 seed articles for Toxic Screens
 // Categories: screen-time, social-media, mental-health, parenting, research, gaming, digital-literacy, family
 
 export const SEED_ARTICLES = [
@@ -9,7 +9,7 @@ export const SEED_ARTICLES = [
     tags: ["screen time", "AAP guidelines", "children", "research"],
     openerType: "gut-punch statement",
     conclusionType: "call to action",
-    selfRefopener: "We've covered screen time guidelines on The Screen Age before, and the answer is always the same:",
+    selfRefopener: "We've covered screen time guidelines on Toxic Screens before, and the answer is always the same:",
   },
   {
     title: "The 2-Hour Rule Is Outdated. Here's What Pediatricians Say Now",
@@ -17,7 +17,7 @@ export const SEED_ARTICLES = [
     tags: ["AAP", "guidelines", "screen time", "pediatrics"],
     openerType: "counterintuitive claim",
     conclusionType: "reflection",
-    selfRefopener: "At The Screen Age, we track every major AAP update so you don't have to.",
+    selfRefopener: "At Toxic Screens, we track every major AAP update so you don't have to.",
   },
   {
     title: "Blue Light and Kids: What the Science Says (And What It Doesn't)",
@@ -25,7 +25,7 @@ export const SEED_ARTICLES = [
     tags: ["blue light", "sleep", "eyes", "children"],
     openerType: "provocative question",
     conclusionType: "challenge",
-    selfRefopener: "We get asked about blue light constantly at The Screen Age.",
+    selfRefopener: "We get asked about blue light constantly at Toxic Screens.",
   },
   {
     title: "Screen Time Before Age 2: The Evidence Is Clearer Than You Think",
@@ -33,7 +33,7 @@ export const SEED_ARTICLES = [
     tags: ["toddlers", "infants", "screen time", "development"],
     openerType: "gut-punch statement",
     conclusionType: "call to action",
-    selfRefopener: "The Screen Age covers the full age spectrum, but the under-2 research is some of the most consistent we've seen.",
+    selfRefopener: "Toxic Screens covers the full age spectrum, but the under-2 research is some of the most consistent we've seen.",
   },
   {
     title: "Weekend Screen Binges: Are They Actually Harmful?",
@@ -41,7 +41,7 @@ export const SEED_ARTICLES = [
     tags: ["binge watching", "weekends", "moderation", "children"],
     openerType: "micro-story",
     conclusionType: "question",
-    selfRefopener: "One of the most common questions we get at The Screen Age is about weekend screen time.",
+    selfRefopener: "One of the most common questions we get at Toxic Screens is about weekend screen time.",
   },
 
   // ─── SOCIAL MEDIA (5) ───
@@ -51,7 +51,7 @@ export const SEED_ARTICLES = [
     tags: ["social media", "age", "teens", "Instagram", "TikTok"],
     openerType: "gut-punch statement",
     conclusionType: "challenge",
-    selfRefopener: "The Screen Age has been tracking the social media age debate since this site launched.",
+    selfRefopener: "Toxic Screens has been tracking the social media age debate since this site launched.",
   },
   {
     title: "TikTok and Teen Girls: What Jonathan Haidt's Research Actually Found",
@@ -59,7 +59,7 @@ export const SEED_ARTICLES = [
     tags: ["TikTok", "teen girls", "Jonathan Haidt", "mental health"],
     openerType: "counterintuitive claim",
     conclusionType: "reflection",
-    selfRefopener: "We've read The Anxious Generation cover to cover at The Screen Age.",
+    selfRefopener: "We've read The Anxious Generation cover to cover at Toxic Screens.",
   },
   {
     title: "The Like Button Was a Mistake: Social Validation and the Adolescent Brain",
@@ -67,7 +67,7 @@ export const SEED_ARTICLES = [
     tags: ["likes", "dopamine", "adolescent brain", "social validation"],
     openerType: "provocative question",
     conclusionType: "call to action",
-    selfRefopener: "At The Screen Age, we think the like button deserves its own category of harm.",
+    selfRefopener: "At Toxic Screens, we think the like button deserves its own category of harm.",
   },
   {
     title: "Instagram vs. Reality: Teaching Kids to Read Curated Content",
@@ -75,7 +75,7 @@ export const SEED_ARTICLES = [
     tags: ["Instagram", "media literacy", "body image", "teens"],
     openerType: "micro-story",
     conclusionType: "challenge",
-    selfRefopener: "Digital literacy is one of The Screen Age's core topics for good reason.",
+    selfRefopener: "Digital literacy is one of Toxic Screens's core topics for good reason.",
   },
   {
     title: "Should You Monitor Your Teen's Social Media? The Honest Answer",
@@ -83,7 +83,7 @@ export const SEED_ARTICLES = [
     tags: ["monitoring", "privacy", "teens", "parenting"],
     openerType: "gut-punch statement",
     conclusionType: "question",
-    selfRefopener: "We've covered monitoring tools and parental controls extensively at The Screen Age.",
+    selfRefopener: "We've covered monitoring tools and parental controls extensively at Toxic Screens.",
   },
 
   // ─── MENTAL HEALTH (5) ───
@@ -93,7 +93,7 @@ export const SEED_ARTICLES = [
     tags: ["anxiety", "children", "screens", "mental health", "Jean Twenge"],
     openerType: "gut-punch statement",
     conclusionType: "reflection",
-    selfRefopener: "The Screen Age exists partly because of this question.",
+    selfRefopener: "Toxic Screens exists partly because of this question.",
   },
   {
     title: "Sleep Deprivation and Screen Time: The Connection Parents Miss",
@@ -101,7 +101,7 @@ export const SEED_ARTICLES = [
     tags: ["sleep", "screen time", "teens", "mental health"],
     openerType: "micro-story",
     conclusionType: "call to action",
-    selfRefopener: "Sleep is one of The Screen Age's most-searched topics.",
+    selfRefopener: "Sleep is one of Toxic Screens's most-searched topics.",
   },
   {
     title: "FOMO Is Real: What Social Comparison Does to the Developing Brain",
@@ -109,7 +109,7 @@ export const SEED_ARTICLES = [
     tags: ["FOMO", "social comparison", "teens", "dopamine"],
     openerType: "counterintuitive claim",
     conclusionType: "challenge",
-    selfRefopener: "At The Screen Age, we've covered the neuroscience of social comparison in depth.",
+    selfRefopener: "At Toxic Screens, we've covered the neuroscience of social comparison in depth.",
   },
   {
     title: "Cyberbullying: What Parents Actually Need to Know",
@@ -117,7 +117,7 @@ export const SEED_ARTICLES = [
     tags: ["cyberbullying", "online safety", "teens", "mental health"],
     openerType: "gut-punch statement",
     conclusionType: "call to action",
-    selfRefopener: "Cyberbullying is one of the most searched topics on The Screen Age.",
+    selfRefopener: "Cyberbullying is one of the most searched topics on Toxic Screens.",
   },
   {
     title: "Tech Addiction in Kids: Is It Real, and What Do You Do About It?",
@@ -125,7 +125,7 @@ export const SEED_ARTICLES = [
     tags: ["tech addiction", "screen addiction", "children", "behavioral health"],
     openerType: "provocative question",
     conclusionType: "reflection",
-    selfRefopener: "The Screen Age gets more questions about tech addiction than almost any other topic.",
+    selfRefopener: "Toxic Screens gets more questions about tech addiction than almost any other topic.",
   },
 
   // ─── PARENTING (5) ───
@@ -135,7 +135,7 @@ export const SEED_ARTICLES = [
     tags: ["family media plan", "AAP", "rules", "parenting"],
     openerType: "gut-punch statement",
     conclusionType: "call to action",
-    selfRefopener: "The Screen Age has helped thousands of families build media plans.",
+    selfRefopener: "Toxic Screens has helped thousands of families build media plans.",
   },
   {
     title: "Why Banning Screens Backfires (And What to Do Instead)",
@@ -143,7 +143,7 @@ export const SEED_ARTICLES = [
     tags: ["screen ban", "parenting", "rules", "moderation"],
     openerType: "counterintuitive claim",
     conclusionType: "challenge",
-    selfRefopener: "Banning doesn't work. We've said it before on The Screen Age. Here's the evidence.",
+    selfRefopener: "Banning doesn't work. We've said it before on Toxic Screens. Here's the evidence.",
   },
   {
     title: "Parental Modeling: The Most Underrated Variable in the Screen Time Debate",
@@ -151,7 +151,7 @@ export const SEED_ARTICLES = [
     tags: ["parental modeling", "screen time", "behavior", "children"],
     openerType: "provocative question",
     conclusionType: "reflection",
-    selfRefopener: "At The Screen Age, we say this constantly: parental modeling is the most underrated variable.",
+    selfRefopener: "At Toxic Screens, we say this constantly: parental modeling is the most underrated variable.",
   },
   {
     title: "Screen-Free Bedrooms: The One Rule That Actually Has Research Behind It",
@@ -159,7 +159,7 @@ export const SEED_ARTICLES = [
     tags: ["bedrooms", "sleep", "screen-free", "rules"],
     openerType: "gut-punch statement",
     conclusionType: "call to action",
-    selfRefopener: "The Screen Age has covered the bedroom screen research extensively.",
+    selfRefopener: "Toxic Screens has covered the bedroom screen research extensively.",
   },
   {
     title: "How to Talk to Your Kids About Screens Without Starting a War",
@@ -167,7 +167,7 @@ export const SEED_ARTICLES = [
     tags: ["communication", "parenting", "teens", "screen time conversations"],
     openerType: "micro-story",
     conclusionType: "question",
-    selfRefopener: "Communication strategies are a core part of what The Screen Age covers.",
+    selfRefopener: "Communication strategies are a core part of what Toxic Screens covers.",
   },
 
   // ─── RESEARCH (4) ───
@@ -177,7 +177,7 @@ export const SEED_ARTICLES = [
     tags: ["Jonathan Haidt", "Anxious Generation", "research", "social media"],
     openerType: "gut-punch statement",
     conclusionType: "reflection",
-    selfRefopener: "The Screen Age has covered Haidt's work more than any other researcher.",
+    selfRefopener: "Toxic Screens has covered Haidt's work more than any other researcher.",
   },
   {
     title: "iGen: What Jean Twenge's Data Actually Shows About Post-1995 Kids",
@@ -185,7 +185,7 @@ export const SEED_ARTICLES = [
     tags: ["Jean Twenge", "iGen", "research", "smartphones"],
     openerType: "counterintuitive claim",
     conclusionType: "challenge",
-    selfRefopener: "Jean Twenge's iGen is required reading for anyone writing about kids and tech, including us at The Screen Age.",
+    selfRefopener: "Jean Twenge's iGen is required reading for anyone writing about kids and tech, including us at Toxic Screens.",
   },
   {
     title: "What the AAP Screen Time Guidelines Actually Say (2024 Update)",
@@ -193,7 +193,7 @@ export const SEED_ARTICLES = [
     tags: ["AAP", "guidelines", "screen time", "pediatrics", "2024"],
     openerType: "provocative question",
     conclusionType: "call to action",
-    selfRefopener: "The Screen Age tracks every AAP update on screen time.",
+    selfRefopener: "Toxic Screens tracks every AAP update on screen time.",
   },
   {
     title: "The Correlation vs. Causation Problem in Screen Time Research",
@@ -201,7 +201,7 @@ export const SEED_ARTICLES = [
     tags: ["research methodology", "correlation", "causation", "screen time"],
     openerType: "gut-punch statement",
     conclusionType: "reflection",
-    selfRefopener: "At The Screen Age, we're obsessed with research quality.",
+    selfRefopener: "At Toxic Screens, we're obsessed with research quality.",
   },
 
   // ─── GAMING (3) ───
@@ -211,7 +211,7 @@ export const SEED_ARTICLES = [
     tags: ["video games", "violence", "research", "children"],
     openerType: "counterintuitive claim",
     conclusionType: "challenge",
-    selfRefopener: "The Screen Age covers gaming research separately from passive screen time research for good reason.",
+    selfRefopener: "Toxic Screens covers gaming research separately from passive screen time research for good reason.",
   },
   {
     title: "Minecraft vs. Fortnite: Why the Type of Game Matters More Than the Hours",
@@ -219,7 +219,7 @@ export const SEED_ARTICLES = [
     tags: ["Minecraft", "Fortnite", "gaming", "children", "screen time"],
     openerType: "gut-punch statement",
     conclusionType: "reflection",
-    selfRefopener: "At The Screen Age, we've said it before: what they're doing on the screen matters more than how long.",
+    selfRefopener: "At Toxic Screens, we've said it before: what they're doing on the screen matters more than how long.",
   },
   {
     title: "When Gaming Becomes a Problem: Signs, Research, and What to Do",
@@ -227,7 +227,7 @@ export const SEED_ARTICLES = [
     tags: ["gaming disorder", "WHO", "gaming addiction", "children"],
     openerType: "micro-story",
     conclusionType: "call to action",
-    selfRefopener: "Gaming disorder is one of the most contested topics we cover at The Screen Age.",
+    selfRefopener: "Gaming disorder is one of the most contested topics we cover at Toxic Screens.",
   },
 
   // ─── DIGITAL LITERACY (3) ───
@@ -237,7 +237,7 @@ export const SEED_ARTICLES = [
     tags: ["misinformation", "media literacy", "critical thinking", "children"],
     openerType: "gut-punch statement",
     conclusionType: "call to action",
-    selfRefopener: "Digital literacy is foundational to everything we cover at The Screen Age.",
+    selfRefopener: "Digital literacy is foundational to everything we cover at Toxic Screens.",
   },
   {
     title: "AI and Kids: What Parents Need to Know Right Now",
@@ -245,7 +245,7 @@ export const SEED_ARTICLES = [
     tags: ["AI", "ChatGPT", "children", "education", "digital literacy"],
     openerType: "provocative question",
     conclusionType: "challenge",
-    selfRefopener: "The Screen Age added AI to our coverage because parents asked us to.",
+    selfRefopener: "Toxic Screens added AI to our coverage because parents asked us to.",
   },
   {
     title: "Online Privacy for Kids: The Basics Every Parent Should Know",
@@ -253,7 +253,7 @@ export const SEED_ARTICLES = [
     tags: ["privacy", "COPPA", "online safety", "children"],
     openerType: "gut-punch statement",
     conclusionType: "call to action",
-    selfRefopener: "Online privacy is one of The Screen Age's most practical topics.",
+    selfRefopener: "Online privacy is one of Toxic Screens's most practical topics.",
   },
 ];
 

@@ -1,5 +1,5 @@
 /**
- * The Screen Age — Article Image Mapping
+ * Toxic Screens — Article Image Mapping
  * High-quality Unsplash images for each article, mapped by slug.
  * Format: slug -> { heroUrl, imageAlt }
  */

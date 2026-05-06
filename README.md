@@ -1,4 +1,4 @@
-# The Screen Age
+# Toxic Screens
 
 **Evidence-based, non-alarmist resource on kids and technology, screen time, and the anxious generation.**
 
@@ -106,7 +106,7 @@ pm2 save
 ```nginx
 server {
     listen 80;
-    server_name thescreenage.com www.thescreenage.com;
+    server_name screentoxic.com www.screentoxic.com;
 
     location / {
         proxy_pass http://localhost:3000;
@@ -126,7 +126,7 @@ server {
 
 ```bash
 sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx -d thescreenage.com -d www.thescreenage.com
+sudo certbot --nginx -d screentoxic.com -d www.screentoxic.com
 ```
 
 ---
@@ -198,4 +198,4 @@ screen-toxic/
 
 ## License
 
-Private — All rights reserved. © The Screen Age / The Oracle Lover.
+Private — All rights reserved. © Toxic Screens / The Oracle Lover.

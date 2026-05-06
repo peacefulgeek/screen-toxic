@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * The Screen Age — Seed Script
+ * Toxic Screens — Seed Script
  * Generates 30 articles using the DeepSeek writing engine and saves them to the database.
  * Run: node scripts/seed.mjs
  */
@@ -93,7 +93,7 @@ async function generateWithRetry(articleDef, relatedArticles, maxRetries = 3) {
 }
 
 async function main() {
-  console.log('🌱 The Screen Age — Seed Script');
+  console.log('🌱 Toxic Screens — Seed Script');
   console.log('================================');
   console.log(`Generating ${SEED_ARTICLES.length} articles...\n`);
 
@@ -152,7 +152,7 @@ async function main() {
     const article = {
       slug,
       title: articleDef.title,
-      meta_description: `${articleDef.title} — evidence-based, non-alarmist analysis from The Screen Age.`,
+      meta_description: `${articleDef.title} — evidence-based, non-alarmist analysis from Toxic Screens.`,
       og_title: articleDef.title,
       category: articleDef.category,
       tags: articleDef.tags || [],

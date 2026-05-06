@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * The Screen Age — Fast Seed Script
+ * Toxic Screens — Fast Seed Script
  * Generates all 30 articles using parallel batches of 5.
  * Run: node scripts/fast-seed.mjs
  */
@@ -75,7 +75,7 @@ async function generateOne(articleDef, index, total, relatedArticles) {
       const article = {
         slug,
         title: articleDef.title,
-        meta_description: `${articleDef.title} — evidence-based, non-alarmist analysis from The Screen Age.`,
+        meta_description: `${articleDef.title} — evidence-based, non-alarmist analysis from Toxic Screens.`,
         og_title: articleDef.title,
         category: articleDef.category,
         tags: articleDef.tags || [],
@@ -106,7 +106,7 @@ async function generateOne(articleDef, index, total, relatedArticles) {
 }
 
 async function main() {
-  console.log('⚡ The Screen Age — Fast Seed Script');
+  console.log('⚡ Toxic Screens — Fast Seed Script');
   console.log('=====================================');
   await db.initDb();
 

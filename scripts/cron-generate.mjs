@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * The Screen Age — Cron: Generate new articles
+ * Toxic Screens — Cron: Generate new articles
  * Runs weekly. Generates 3 new articles and saves them as drafts.
  * Crontab: 0 6 * * 1 node /path/to/scripts/cron-generate.mjs
  */
@@ -77,7 +77,7 @@ async function main() {
       db.upsertArticle({
         slug,
         title: topic.title,
-        meta_description: `${topic.title} — evidence-based analysis from The Screen Age.`,
+        meta_description: `${topic.title} — evidence-based analysis from Toxic Screens.`,
         og_title: topic.title,
         category: topic.category,
         tags: topic.tags,

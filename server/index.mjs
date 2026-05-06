@@ -1,5 +1,5 @@
 /**
- * The Screen Age — Express Server
+ * Toxic Screens — Express Server
  * Serves the React SPA + API routes + sitemap/robots/llms.txt
  */
 
@@ -13,7 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const PORT = process.env.PORT || 3000;
-const SITE_URL = process.env.SITE_URL || 'https://thescreenage.com';
+const SITE_URL = process.env.SITE_URL || 'https://screentoxic.com';
 
 const app = express();
 app.use(express.json());
@@ -170,10 +170,10 @@ app.get('/llms.txt', (req, res) => {
     ).join('\n');
 
     res.set('Content-Type', 'text/plain');
-    res.send(`# The Screen Age
+    res.send(`# Toxic Screens
 
 ## About
-The Screen Age is an evidence-based, non-alarmist resource on kids and technology, screen time, and the anxious generation. Written by The Oracle Lover — an intuitive educator and oracle guide.
+Toxic Screens is an evidence-based, non-alarmist resource on kids and technology, screen time, and the anxious generation. Written by The Oracle Lover — an intuitive educator and oracle guide.
 
 ## Mission
 To give parents and caregivers the calibrated truth about children and technology — including what the research actually shows, what we don't know yet, and what actually works.
@@ -215,7 +215,7 @@ if (fs.existsSync(DIST)) {
 
 // ─── Start ────────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`[server] The Screen Age running on port ${PORT}`);
+  console.log(`[server] Toxic Screens running on port ${PORT}`);
   console.log(`[server] Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 

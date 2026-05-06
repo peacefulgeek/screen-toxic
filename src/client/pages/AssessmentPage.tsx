@@ -49,7 +49,7 @@ export default function AssessmentPage() {
       .then(data => {
         setAssessment(data);
         setLoading(false);
-        document.title = `${data.title} | The Screen Age`;
+        document.title = `${data.title} | Toxic Screens`;
       })
       .catch(() => setLoading(false));
   }, [slug]);

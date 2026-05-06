@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * The Screen Age — Assign Images Script
+ * Toxic Screens — Assign Images Script
  * Assigns Unsplash hero images to all articles in the database.
  * Run: node scripts/assign-images.mjs
  */

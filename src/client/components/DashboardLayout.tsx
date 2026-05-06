@@ -88,8 +88,8 @@ export function DashboardLayout({ children }: Props) {
       {/* Sidebar */}
       <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`} aria-label="Site navigation">
         {/* Logo */}
-        <Link to="/" className="sidebar-logo" aria-label="The Screen Age — Home">
-          <div className="sidebar-logo-text">The Screen Age</div>
+        <Link to="/" className="sidebar-logo" aria-label="Toxic Screens — Home">
+          <div className="sidebar-logo-text">Toxic Screens</div>
           <div className="sidebar-logo-tagline">Kids · Technology · Evidence</div>
         </Link>
 
@@ -195,7 +195,7 @@ export function DashboardLayout({ children }: Props) {
       <div className="main-content">
         {/* Mobile Header */}
         <header className="mobile-header" aria-label="Mobile navigation">
-          <Link to="/" className="mobile-header-logo">The Screen Age</Link>
+          <Link to="/" className="mobile-header-logo">Toxic Screens</Link>
           <button
             className="hamburger-btn"
             onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -226,7 +226,7 @@ function Footer() {
     <footer className="site-footer" aria-label="Site footer">
       <div className="footer-grid">
         <div>
-          <div className="footer-brand-name">The Screen Age</div>
+          <div className="footer-brand-name">Toxic Screens</div>
           <p className="footer-brand-desc">
             Evidence-based, non-alarmist, and honest about what the research shows about screens and children. Including what we don't know yet.
           </p>
@@ -264,7 +264,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} The Screen Age. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Toxic Screens. All rights reserved.</span>
         <span>Kids · Technology · Evidence</span>
       </div>
     </footer>

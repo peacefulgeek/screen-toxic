@@ -1,5 +1,5 @@
-const SITE_DOMAIN = process.env.SITE_DOMAIN || 'thescreenage.com';
-const SITE_NAME = 'The Screen Age';
+const SITE_DOMAIN = process.env.SITE_DOMAIN || 'screentoxic.com';
+const SITE_NAME = 'Toxic Screens';
 
 const STRIP_PARAMS = new Set([
   'utm_source','utm_medium','utm_campaign','utm_term','utm_content',

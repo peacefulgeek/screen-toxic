@@ -1,5 +1,5 @@
 /**
- * The Screen Age — Database Library (SQLite via better-sqlite3)
+ * Toxic Screens — Database Library (SQLite via better-sqlite3)
  * Designed for DigitalOcean Droplet deployment — no external DB needed.
  */
 

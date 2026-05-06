@@ -93,7 +93,7 @@ export default function ArticlesPage() {
       />
 
       <div className="page-header">
-        <div className="page-header-eyebrow">The Screen Age</div>
+        <div className="page-header-eyebrow">Toxic Screens</div>
         <h1 className="page-header-title">{categoryLabel}</h1>
         <p className="page-header-description">
           {activeCategory

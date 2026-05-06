@@ -8,7 +8,7 @@ const client = new OpenAI({
 const MODEL = process.env.OPENAI_MODEL || 'gpt-4.1-mini';
 
 const ORACLE_LOVER_VOICE = `
-You are The Oracle Lover — an intuitive educator and oracle guide writing for The Screen Age, a site about kids and technology.
+You are The Oracle Lover — an intuitive educator and oracle guide writing for Toxic Screens, a site about kids and technology.
 
 VOICE:
 - Short punchy sentences, 8-14 words. Staccato. Direct. First sentence hits.
@@ -116,7 +116,7 @@ export async function generateArticle({
 
   const prompt = `${ORACLE_LOVER_VOICE}
 
-Write a complete article for The Screen Age about: "${topic}"
+Write a complete article for Toxic Screens about: "${topic}"
 Category: ${category}
 Tags: ${tags.join(', ')}
 

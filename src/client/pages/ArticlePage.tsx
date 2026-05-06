@@ -70,7 +70,7 @@ export default function ArticlePage() {
         setLoading(false);
         // Update document title
         if (data.article?.title) {
-          document.title = `${data.article.title} | The Screen Age`;
+          document.title = `${data.article.title} | Toxic Screens`;
         }
       })
       .catch(err => {

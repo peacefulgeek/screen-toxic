@@ -33,7 +33,7 @@ export default function AboutPage() {
         />
         <div>
           <div style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.6)', marginBottom: 8 }}>
-            About The Screen Age
+            About Toxic Screens
           </div>
           <h1 style={{ color: 'white', marginBottom: 8, fontSize: '2rem' }}>The Oracle Lover</h1>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', margin: 0 }}>
@@ -45,7 +45,7 @@ export default function AboutPage() {
       <div style={{ maxWidth: 'var(--max-content-width)' }}>
         <h2 style={{ marginBottom: 'var(--spacing-md)' }}>About This Site</h2>
         <p>
-          The Screen Age exists because the conversation about kids and technology is broken. On one side, you have moral panic — every new study becomes a headline about how screens are destroying a generation. On the other side, you have dismissal — "kids have always had new technology, stop worrying."
+          Toxic Screens exists because the conversation about kids and technology is broken. On one side, you have moral panic — every new study becomes a headline about how screens are destroying a generation. On the other side, you have dismissal — "kids have always had new technology, stop worrying."
         </p>
         <p>
           Neither position is useful. The research is messier than the headlines suggest. Some findings are strong. Some are contested. Some are genuinely alarming. Some are overblown. Parents deserve to know the difference.
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
         <h2 style={{ marginBottom: 'var(--spacing-md)' }}>The Oracle Lover Network</h2>
         <p>
-          The Screen Age is part of The Oracle Lover's broader work on intuitive education and practical wisdom. For more, visit{' '}
+          Toxic Screens is part of The Oracle Lover's broader work on intuitive education and practical wisdom. For more, visit{' '}
           <a href="https://theoraclelover.com" target="_blank" rel="noopener noreferrer">
             theoraclelover.com
           </a>.

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * The Screen Age — Cron: Auto-publish queued articles
+ * Toxic Screens — Cron: Auto-publish queued articles
  * Runs daily. Publishes 1 draft article per day.
  * Crontab: 0 8 * * * node /path/to/scripts/cron-publish.mjs
  */
