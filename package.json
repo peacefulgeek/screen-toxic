@@ -22,24 +22,18 @@
     "express": "^4.18.2",
     "node-cron": "^3.0.3",
     "openai": "^4.47.1",
-    "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3",
-    "serve-static": "^1.15.0",
-    "sharp": "^0.34.5"
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
     "@types/compression": "^1.7.5",
     "@types/express": "^4.17.21",
     "@types/node": "^20.12.7",
-    "@types/pg": "^8.11.5",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "@vitejs/plugin-react": "^4.2.1",
     "concurrently": "^8.2.2",
-    "esbuild": "^0.20.2",
-    "tsx": "^4.7.3",
     "typescript": "^5.4.5",
     "vite": "^5.2.8",
     "vite-plugin-ssr": "^0.4.142"
