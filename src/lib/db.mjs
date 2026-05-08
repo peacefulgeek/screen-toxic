@@ -1,6 +1,6 @@
 /**
  * Toxic Screens — Database Library (SQLite via better-sqlite3)
- * Designed for DigitalOcean Droplet deployment — no external DB needed.
+ * Designed for Render.com deployment with persistent disk — no external DB needed.
  */
 
 import Database from 'better-sqlite3';

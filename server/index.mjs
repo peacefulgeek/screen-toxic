@@ -147,17 +147,75 @@ app.get('/robots.txt', (req, res) => {
   res.set('Content-Type', 'text/plain');
   res.send(`User-agent: *
 Allow: /
+Disallow: /api/
 
+# OpenAI / ChatGPT / SearchGPT
 User-agent: GPTBot
 Allow: /
 
+# Anthropic Claude
 User-agent: Claude-Web
 Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
 
+# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
+# Brave Search AI
+User-agent: Brave
+Allow: /
+
+# You.com YouChat
+User-agent: YouBot
+Allow: /
+
+# Kagi Search
+User-agent: KagiBot
+Allow: /
+
+# Bing / Microsoft Copilot
+User-agent: Bingbot
+Allow: /
+User-agent: msnbot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Google
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+
+# AI training crawlers
+User-agent: CCBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+
 Sitemap: ${SITE_URL}/sitemap.xml
+Sitemap: ${SITE_URL}/sitemap-images.xml
+`);
+});
+
+// ─── AEO: ai.txt ──────────────────────────────────────────────────────────────
+app.get('/ai.txt', (req, res) => {
+  res.set('Content-Type', 'text/plain');
+  res.send(`# ai.txt — Toxic Screens (screentoxic.com)
+Allow: all
+Allow-Training: yes
+Allow-Indexing: yes
+Allow-Summarization: yes
+Contact: hello@screentoxic.com
+Site: ${SITE_URL}
+Sitemap: ${SITE_URL}/sitemap.xml
+LLMs: ${SITE_URL}/llms.txt
 `);
 });
 

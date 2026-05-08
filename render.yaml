@@ -1,0 +1,87 @@
+services:
+  - type: web
+    name: screen-toxic
+    runtime: node
+    region: oregon
+    plan: starter
+
+    # Build: install deps + compile React frontend
+    buildCommand: pnpm install --frozen-lockfile && pnpm build
+
+    # Start: copy seed DB to persistent disk (first deploy only), then start Express
+    startCommand: node scripts/render-start.mjs
+
+    # Health check — Render uses this to confirm the service is up
+    healthCheckPath: /health
+
+    # Auto-deploy on every push to main
+    autoDeploy: true
+
+    # Environment variables
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      # Render assigns PORT automatically — server reads process.env.PORT
+      - key: PORT
+        value: 10000
+
+      # Site identity
+      - key: SITE_DOMAIN
+        value: screentoxic.com
+      - key: SITE_URL
+        value: https://screentoxic.com
+      - key: SITE_NAME
+        value: Toxic Screens
+
+      # SQLite DB on persistent disk
+      - key: DB_PATH
+        value: /data/screenage.db
+
+      # OpenAI — set this in Render dashboard (never commit the key)
+      - key: OPENAI_API_KEY
+        sync: false
+
+      # Bunny CDN — storage zone: screen-toxic, pull zone: screen-toxic.b-cdn.net
+      - key: BUNNY_API_KEY
+        value: 6c37756b-8e97-4dc2-bda68cbb5dc4-6388-4450
+      - key: BUNNY_STORAGE_ZONE
+        value: screen-toxic
+      - key: BUNNY_STORAGE_ENDPOINT
+        value: https://ny.storage.bunnycdn.com
+      - key: BUNNY_CDN_URL
+        value: https://screen-toxic.b-cdn.net
+
+      # Amazon Associates
+      - key: AMAZON_TAG
+        value: spankyspinola-20
+
+    # Persistent disk — SQLite DB lives here, survives deploys
+    disk:
+      name: screen-toxic-data
+      mountPath: /data
+      sizeGB: 1
+
+# ─── Cron jobs ─────────────────────────────────────────────────────────────────
+# Render cron jobs run as separate services
+# Phase 1: 5 articles/day at 8am UTC for 40 days
+# Phase 2: 1 article/weekday (Mon-Fri) at 9am UTC after day 40
+  - type: cron
+    name: screen-toxic-publish
+    runtime: node
+    region: oregon
+    plan: starter
+    schedule: "0 8 * * *"
+    buildCommand: pnpm install --frozen-lockfile
+    startCommand: node scripts/cron-publish.mjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_PATH
+        value: /data/screenage.db
+      - key: SITE_URL
+        value: https://screentoxic.com
+    disk:
+      name: screen-toxic-data
+      mountPath: /data
+      sizeGB: 1

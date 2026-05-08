@@ -17,7 +17,7 @@ Built by The Oracle Lover — Intuitive Educator & Oracle Guide.
 | Fonts | Inter (Google Fonts) |
 | Images | Bunny CDN (`screen-toxic.b-cdn.net`) — all images as compressed WebP |
 | AI Writing | OpenAI-compatible API (`gpt-4.1-mini`) |
-| Deployment | DigitalOcean Droplet (Node + PM2) |
+| Deployment | Render Droplet (Node + PM2) |
 
 ---
 
@@ -69,7 +69,7 @@ Visit: http://localhost:3000
 
 ---
 
-## DigitalOcean Deployment
+## Render Deployment
 
 ### 1. Create a Droplet
 
