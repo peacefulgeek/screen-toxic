@@ -5,8 +5,8 @@ node_modules/
 # Build output
 dist/
 
-# Database (generated at runtime)
-data/*.db
+# Database — seed DB is tracked in git so Render gets it on first deploy
+# data/*.db  <- intentionally NOT ignored
 data/*.db-shm
 data/*.db-wal
 
