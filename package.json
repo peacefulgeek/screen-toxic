@@ -37,5 +37,6 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.8",
     "vite-plugin-ssr": "^0.4.142"
-  }
+  },
+  "packageManager": "pnpm@9.15.4"
 }
